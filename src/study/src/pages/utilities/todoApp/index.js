@@ -23,8 +23,10 @@ const TodoApp = () => {
   }
 
   useEffect(() => {
-    callAPI();
-  }, []);
+    if (todos.length <= 0) {
+      callAPI();
+    }
+  }, [todos]);
 
   return (
     <>
